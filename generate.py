@@ -1,6 +1,6 @@
 import qrcode
 
-home_assistant_url = "http://homeassistant:8123/add_item"
+home_assistant_url = "http://homeassistant:5001/add_item"
 
 item_to_add = "Bread"
 
