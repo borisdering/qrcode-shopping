@@ -18,31 +18,36 @@ By scanning a QR code, you can add an item to your shopping list directly in Hom
 
 Clone this GitHub repository to your local machine.
 
-\`\`\`bash
+```
 git clone https://github.com/borisdering/qrcode-shopping.git
-\`\`\`
+```
 
 ### Step 2: Build the Docker Image
 
 Navigate to the directory where the `Dockerfile` is located.
 
-\`\`\`bash
+```
 cd path/to/your/repository
-\`\`\`
+```
 
 Build the Docker image.
 
-\`\`\`bash
+```
 docker build -t qrcode-shopping .
-\`\`\`
+```
+
+### Access Token
+```
+export ACCESS_TOKEN=<home_assistant_access_token>
+```
 
 ### Step 3: Run the Docker Container
 
 Run the Docker container on port 5000.
 
-\`\`\`bash
-docker run -p 5000:5000 qrcode-shopping
-\`\`\`
+```
+docker run -p 5000:5000 -e ACCESS_TOKEN=${ACCESS_TOKEN} qrcode-shopping
+```
 
 ## Usage
 

@@ -1,6 +1,12 @@
 from flask import Flask, request
 import requests
 import logging
+import os
+
+access_token = os.environ.get('ACCESS_TOKEN')
+if not access_token:
+    print("Error: ACCESS_TOKEN environment variable not set.")
+    exit(1)
 
 app = Flask(__name__)
 
