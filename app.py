@@ -32,7 +32,7 @@ def add_item():
     }
     response = requests.post(home_assistant_url, json=data, headers=headers)
     
-    if response.status_code == 201:
+    if response.status_code == 200:
         logging.info(f'Successfully added {item_to_add} to the shopping list.')
         return f'Successfully added {item_to_add} to the shopping list.', 200
     else:
