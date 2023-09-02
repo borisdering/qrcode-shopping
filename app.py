@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, make_response
 import requests
 import logging
 import os
@@ -34,7 +34,8 @@ def add_item():
     
     if response.status_code == 200:
         logging.info(f'Successfully added {item_to_add} to the shopping list.')
-        return f'Successfully added {item_to_add} to the shopping list.', 200
+        html = open("success.html").read()
+        return make_response(html)
     else:
         logging.info(f'Failed to add item. Status code: {response.status_code}')
         return f'Failed to add item. Status code: {response.status_code}', 400
